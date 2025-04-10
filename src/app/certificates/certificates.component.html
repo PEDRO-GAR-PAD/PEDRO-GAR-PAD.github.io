@@ -1,1 +1,7 @@
-<p>certificates works!</p>
+<div class="certificate-card" *ngFor="let cer of certificates">
+  <div class="certificate-info">
+    <h3>{{ cer.title }}</h3>
+    <p class="date">{{ cer.date }}</p>
+    <p>{{ cer.context }}</p>
+  </div>
+</div>
