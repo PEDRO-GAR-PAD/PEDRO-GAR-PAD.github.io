@@ -1,0 +1,7 @@
+<div class="card" *ngFor="let job of workExperience">
+  <h3>{{ job.company }}</h3>
+  <p class="date">{{ job.startDate }} - {{job.endDate}}</p>
+  <p><b>{{ job.position }}</b></p>
+  <p>{{ job.location }}</p>
+  <p>{{ job.accomplishments }}</p>
+</div>
