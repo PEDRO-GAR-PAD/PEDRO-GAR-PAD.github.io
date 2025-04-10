@@ -1,1 +1,5 @@
-<p>education works!</p>
+<div class="card" *ngFor="let edu of education">
+  <h3>{{ edu.school }}</h3>
+  <p class="date">{{ edu.date }}</p>
+  <p><b>{{ edu.location }}</b></p>
+</div>

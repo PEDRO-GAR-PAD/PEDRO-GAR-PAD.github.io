@@ -1,0 +1,62 @@
+/* Estilo general */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.cv-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabecera */
+.cv-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Contenido principal */
+.cv-content {
+  display: flex;
+  gap: 30px;
+}
+
+/* Columnas */
+.left-column,
+.right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Tarjetas de cada sección */
+app-work-experience,
+app-education,
+app-languages,
+app-skills,
+app-certificates,
+app-interests {
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Enlaces y negrita */
+a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+b {
+  color: #222;
+}
