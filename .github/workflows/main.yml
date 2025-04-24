@@ -1,38 +1,40 @@
-name: Angular_DockerImage_v2
+name: Angular_DockerImage_2
 on:
-push:
-branches: [ master ]
-pull_request:
-branches: [ master ]
+  push:
+    branches: [ master ] # Cuando se hace push en la rama master
+  pull_request:
+    branches: [ master ] # También cuando se hace un pull request hacia la rama master
+
 jobs:
-angular_deploy :
-runs-on: ubuntu-latest
-steps:
-- uses: actions/checkout@v2
-- name: Use Node.js 16.x
-uses: actions/setup-node@v1
-with:
-node-version: 20.x
-- name: npm install
-run: npm ci
-- name: test
-run: |
-npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
-- name: build
-run: |
-npm run build --output-path=docs
-- name: docker login
-env:
-DOCKER_USER: ${{secrets.DOCKER_USER}}
-DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-run: |
-docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-- name: Download and run the Docker base image
-run: docker run -d --name http_base httpd
-- name: copy model to the Docker image
-run: docker cp docs/. http_base:/usr/local/apache2/htdocs
-- name: Build the custom Docker image
-run: docker commit --change "ENV MODEL_NAME http_base" http_base
-${{secrets.DOCKER_USER}}/mycv:${{ github.sha }}
-- name: Docker Push
-run: docker push ${{secrets.DOCKER_USER}}/mycv:${{ github.sha }}
+  angular_deploy:
+    runs-on: ubuntu-latest  # Usar una máquina virtual con Ubuntu más reciente
+    steps:
+    - uses: actions/checkout@v2  # Paso para hacer checkout de tu repositorio
+    - name: Use Node.js 16.x
+      uses: actions/setup-node@v1  # Usa una versión específica de Node.js
+      with:
+        node-version: 20.x  # Aquí parece que pides la versión 20.x, pero en el comentario mencionas 16.x
+    - name: npm install
+      run: npm ci  # Instalar las dependencias usando npm ci (mejor para entornos de CI)
+    - name: test
+      run: |
+        npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI  # Ejecutar pruebas en modo sin vista
+    - name: build
+      run: |
+        npm run build --output-path=docs  # Construir la aplicación y volcarla en la carpeta "docs"
+    - name: docker login
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USER}}  # Usar el secreto de GitHub para el usuario de Docker
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}  # Usar el secreto de GitHub para la contraseña
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD  # Hacer login en Docker con las credenciales de los secretos
+    - name: Download and run the Docker base image
+      run: docker run -d --name http_base httpd  # Descargar y ejecutar la imagen base de Apache HTTP
+    - name: copy model to the Docker image
+      run: docker cp docs/. http_base:/usr/local/apache2/htdocs  # Copiar el contenido de "docs" al contenedor de Docker
+    - name: Build the custom Docker image
+      run: |
+        docker commit --change "ENV MODEL_NAME http_base" http_base ${{secrets.DOCKER_USER}}/mycv:${{ github.sha }}  # Crear una nueva imagen personalizada con la versión de GitHub SHA
+    - name: Docker Push
+      run: docker push ${{secrets.DOCKER_USER}}/mycv:${{ github.sha }}  # Subir la imagen personalizada a Docker Hub
+
