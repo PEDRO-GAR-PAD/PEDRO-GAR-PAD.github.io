@@ -1,13 +1,45 @@
-ul {
-    list-style-type: square;
-    padding-left: 20px;
-  }
-  
-  li {
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
-  
-  b {
-    color: #333;
-  }
+/* Título de sección ya lo tienes */
+.section-title {
+  font-size: 1.5rem;
+  color: #FAA622;
+  border-bottom: 2px solid #C4D70C;
+  padding-bottom: 8px;
+  margin-bottom: 25px;
+}
+
+/* Cada certificado */
+.certificate-entry {
+  padding: 12px 0;
+  border-bottom: 1px dashed #ccc;
+}
+
+.certificate-entry:last-child {
+  border-bottom: none;
+}
+
+/* Título y fecha en línea */
+.certificate-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.certificate-title {
+  font-size: 1.1rem;
+  color: #2a2540; /* Azul oscuro profundo */
+  margin: 0;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #C22303; /* Rojo brillante estilo Persona 4 */
+  font-weight: 500;
+}
+
+/* Contexto debajo */
+.certificate-context {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}

@@ -1,20 +1,30 @@
 <div class="cv-container">
-  <div class="cv-header">
-    <app-header></app-header>
-  </div>
+  <!-- Aquí insertamos el componente de header dinámico -->
+  <app-header></app-header>
 
-  <div class="cv-content">
-    <div class="left-column">
-      <app-work-experience></app-work-experience>
-      <app-education></app-education>
-      <app-languages></app-languages>
-    </div>
+  <div class="cv-body">
+    <aside class="cv-sidebar">
+      <section class="cv-section">
+        <app-work-experience></app-work-experience>
+      </section>
+      <section class="cv-section">
+        <app-education></app-education>
+      </section>
+      <section class="cv-section">
+        <app-languages></app-languages>
+      </section>
+    </aside>
 
-    <div class="right-column">
-      <app-skills></app-skills>
-      <app-certificates></app-certificates>
-      <app-interests></app-interests>
-    </div>
+    <main class="cv-main">
+      <section class="cv-section">
+        <app-skills></app-skills>
+      </section>
+      <section class="cv-section">
+        <app-certificates></app-certificates>
+      </section>
+      <section class="cv-section">
+        <app-interests></app-interests>
+      </section>
+    </main>
   </div>
 </div>
-

@@ -1,15 +1,18 @@
-<tr>
-  <td>
-    {{header.name}} <br>
-    {{header.goalLife}}
-  </td>
-  <td>
-    <img src="{{header.photoUrl}}" width='200' height='200'>
-  </td>
-  <td>
-    {{header.email}}<br>
-    {{header.phoneNumber}}<br>
-    {{header.location}}<br>
-    {{header.socialNetwork}}
-  </td>
-</tr>
+<header class="cv-header">
+  <div class="cv-header-left">
+    <h1 class="cv-name">{{header.name}}</h1>
+    <p class="cv-goal">{{header.goalLife}}</p>
+  </div>
+
+  <div class="cv-photo">
+    <img src="{{header.photoUrl}}" alt="Foto de perfil" />
+  </div>
+
+  <div class="cv-header-right">
+    <p><strong>Email:</strong> {{header.email}}</p>
+    <p><strong>Tel:</strong> {{header.phoneNumber}}</p>
+    <p><strong>Ubicación:</strong> {{header.location}}</p>
+    <p><strong>Redes:</strong> {{header.socialNetwork}}</p>
+  </div>
+</header>
+

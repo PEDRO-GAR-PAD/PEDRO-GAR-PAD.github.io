@@ -1,4 +1,16 @@
-<div class="card" *ngFor="let skill of skills">
-  <h3>{{ skill.name }}</h3>
-  <p>{{ skill.level }}</p>
-</div>
+<section class="cv-section skills-section">
+  <h2 class="section-title">Habilidades</h2>
+
+  <div class="skill-entry" *ngFor="let skill of skills">
+    <div class="skill-header">
+      <h3 class="skill-name">{{ skill.name }}</h3>
+      <span class="skill-level-text">{{ skill.level }}</span>
+    </div>
+
+    <div class="battery-bar">
+      <div class="battery-fill" [ngStyle]="{ width: skill.level }">
+        <div class="battery-cell" *ngFor="let cell of [].constructor(10)"></div>
+      </div>
+    </div>
+  </div>
+</section>

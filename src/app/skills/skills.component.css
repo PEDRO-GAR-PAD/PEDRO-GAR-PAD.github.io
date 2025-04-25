@@ -1,20 +1,64 @@
-.card {
-  background-color: #f9f9f9;
-  padding: 20px;
-  margin-bottom: 15px;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s;
+/* Título de sección */
+.section-title {
+  font-size: 1.5rem;
+  color: #FAA622;
+  border-bottom: 2px solid #C4D70C;
+  padding-bottom: 8px;
+  margin-bottom: 25px;
 }
-.card:hover {
-  transform: scale(1.02);
+
+/* Cada skill */
+.skill-entry {
+  margin-bottom: 20px;
 }
-.card h3 {
+
+/* Título y nivel */
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-name {
+  font-size: 1.1rem;
+  color: #2a2540;
   margin: 0;
-  font-size: 18px;
-  color: #007BFF;
 }
-.card p {
-  margin: 5px 0 0;
-  color: #555;
+
+.skill-level-text {
+  font-size: 0.9rem;
+  color: #C22303;
+  font-weight: 500;
+}
+
+/* Barra tipo batería */
+.battery-bar {
+  height: 16px;
+  background-color: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 6px;
+  display: flex;
+  position: relative;
+}
+
+/* Contenedor del relleno */
+.battery-fill {
+  display: flex;
+  height: 100%;
+  background-color: transparent; /* no background */
+  transition: width 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+/* Cada celda dentro del battery-fill */
+.battery-cell {
+  flex: 1;
+  margin-right: 2px;
+  background-color: #7FE6EF;
+  border-radius: 2px;
+}
+
+.battery-cell:last-child {
+  margin-right: 0;
 }

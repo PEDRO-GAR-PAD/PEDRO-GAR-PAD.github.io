@@ -1,3 +1,10 @@
-<div class="card" *ngFor="let interest of interests">
-  <h3>{{ interest.interest }}</h3>
-</div>
+<section class="cv-section interests-section">
+  <h2 class="section-title">Intereses</h2>
+
+  <ul class="interest-list">
+    <li class="interest-item" *ngFor="let interest of interests">
+      {{ interest.interest }}
+    </li>
+  </ul>
+</section>
+

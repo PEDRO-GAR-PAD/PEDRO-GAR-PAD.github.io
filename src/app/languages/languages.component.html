@@ -1,4 +1,9 @@
-<div class="card" *ngFor="let lang of languages">
-  IDIOMA:
-  <p>{{ lang.language }}</p>
-</div>
+<section class="cv-section languages-section">
+  <h2 class="section-title">Idiomas</h2>
+
+  <ul class="language-list">
+    <li class="language-item" *ngFor="let lang of languages">
+      {{ lang.language }}
+    </li>
+  </ul>
+</section>

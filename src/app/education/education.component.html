@@ -1,5 +1,11 @@
-<div class="card" *ngFor="let edu of education">
-  <h3>{{ edu.school }}</h3>
-  <p class="date">{{ edu.date }}</p>
-  <p><b>{{ edu.location }}</b></p>
-</div>
+<section class="cv-section education-section">
+  <h2 class="section-title">Educación</h2>
+
+  <div class="edu-entry" *ngFor="let edu of education">
+    <div class="edu-header">
+      <h3 class="school-name">{{ edu.school }}</h3>
+      <span class="date">{{ edu.date }}</span>
+    </div>
+    <p class="location">{{ edu.location }}</p>
+  </div>
+</section>

@@ -1,7 +1,13 @@
-<div class="card" *ngFor="let job of workExperience">
-  <h3>{{ job.company }}</h3>
-  <p class="date">{{ job.startDate }} - {{job.endDate}}</p>
-  <p><b>{{ job.position }}</b></p>
-  <p>{{ job.location }}</p>
-  <p>{{ job.accomplishments }}</p>
-</div>
+<section class="cv-section experience-section">
+  <h2 class="section-title">Experiencia Laboral</h2>
+
+  <div class="job-entry" *ngFor="let job of workExperience">
+    <div class="job-header">
+      <h3 class="company">{{ job.company }}</h3>
+      <span class="date">{{ job.startDate }} - {{ job.endDate }}</span>
+    </div>
+    <p class="position"><b>{{ job.position }}</b></p>
+    <p class="location">{{ job.location }}</p>
+    <p class="accomplishments">{{ job.accomplishments }}</p>
+  </div>
+</section>
