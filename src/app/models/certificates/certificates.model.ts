@@ -3,4 +3,5 @@ export class Certificates {
     title?: string = 'my title';
     date?: string = 'yyyy';
     context?: string = 'context of title';
-}
+    url?: string = 'url/direcction'
+  }
